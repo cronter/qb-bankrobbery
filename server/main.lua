@@ -149,9 +149,9 @@ RegisterNetEvent('qb-bankrobbery:server:recieveItem', function(type)
                      TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item.item], "add")
                  elseif Config.RewardTypes[itemType].type == "money" then
                     local info = {
-                        worth = math.random(2300, 3200)
+                        worth = math.random(130, 220)
                     }
-                    ply.Functions.AddItem('markedbills', math.random(2,3), false, info)
+                    ply.Functions.AddItem('markedbills', math.random(1,2), false, info)
                     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], "add")
                 end
             else
@@ -159,6 +159,7 @@ RegisterNetEvent('qb-bankrobbery:server:recieveItem', function(type)
                 TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['security_card_01'], "add")
             end
         else
+            --guncrafting
             ply.Functions.AddItem('weapon_stungun', 1)
             TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['weapon_stungun'], "add")
         end
